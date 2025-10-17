@@ -14,7 +14,7 @@ body {
 
 }
 
-input {
+input, button {
     font-family: "Noto Sans", sans-serif;
 
 }
