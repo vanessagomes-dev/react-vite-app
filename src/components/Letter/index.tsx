@@ -4,8 +4,8 @@ type Props = {
     value?: string
 }
 
-export function Letter({value = ""}: Props){
-    return(
+export function Letter({value = "" }: Props) {
+    return (
         <div className={styles.letter}>
             <span>{value}</span>
         </div>
