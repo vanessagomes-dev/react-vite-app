@@ -1,6 +1,10 @@
 <h1 align="center">🎯 Jogo de Adivinhação</h1>
 
 <p align="center">
+  <img src="src/assets/banner_game.png" alt="Preview do Jogo de Adivinhação" width="800px"/>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/status-active-success.svg" alt="Status" />
   <img src="https://img.shields.io/badge/React-18.0.0-61DAFB?logo=react" alt="React" />
   <img src="https://img.shields.io/badge/Vite-5.0.0-646CFF?logo=vite" alt="Vite" />
@@ -172,18 +176,27 @@ function handleConfirm() {
 | 🎨 CSS Modules     | Escopo local de estilos                         |
 | 🧠 Lógica React    | Controle de estado e renderização condicional   |
 | 🕹️ Interatividade | Validação de inputs, alertas e reinício do jogo |
+---
+## 🕹️ Preview do Jogo
+
+Abaixo está uma prévia real do jogo em execução:
+
+<p align="center">
+  <img src="src/assets/jogo_adiv2.PNG" alt="Preview do jogo de adivinhação" width="700px"/>
+</p>
 
 ---
 🧾 Licença
 
 Este projeto está sob a licença MIT — sinta-se à vontade para usar, modificar e distribuir.
-
+---
 👩‍💻 Autora
 
 Vanessa Gomes
 📍 Desenvolvedora Front-End
 🌐 GitHub
-
+---
 💡 “Aprender React é entender o ciclo da interatividade.”
 
-<p align="center"> <img src="components_jogodeadivinhacao.jpg" width="700px" alt="Preview do jogo"/> </p> ```
+
+
