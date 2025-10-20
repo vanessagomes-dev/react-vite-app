@@ -17,7 +17,12 @@ export default function App() {
 
   const ATTEMPTS_MARGIN = 5;
 
-  function handleRestartGame() {}
+  function handleRestartGame() {
+    const confirm = window.confirm("Tem certeza que deseja reiniciar o jogo?");
+    if (confirm) {
+      startGame();
+    }
+  }
 
   function startGame() {
     const index = Math.floor(Math.random() * WORDS.length);
@@ -45,6 +50,7 @@ export default function App() {
     );
 
     if (exists) {
+      setLetter("");
       return alert("Você já tentou essa letra" + value);
     }
 
@@ -61,9 +67,32 @@ export default function App() {
     setLetter("");
   }
 
+  function endGame(message: string) {
+    alert(message);
+    startGame();
+  }
+
   useEffect(() => {
     startGame();
   }, []);
+
+  useEffect(() => {
+    if (!challenge) {
+      return;
+    }
+
+    if (lettersUsed.length > challenge.word.length + ATTEMPTS_MARGIN) {
+      return endGame(
+        `Suas tentativas acabaram! A palavra era ${challenge.word}`
+      );
+    }
+
+    setTimeout(() => {
+      if (score === challenge.word.length) {
+        return endGame("Parabéns! Você venceu!");
+      }
+    }, 500);
+  }, [score, lettersUsed.length]);
 
   if (!challenge) {
     return;
@@ -73,9 +102,10 @@ export default function App() {
     <div className={styles.container}>
       <main>
         <Header
-        current={lettersUsed.length}
-        max={challenge.word.length + ATTEMPTS_MARGIN}
-        onRestart={handleRestartGame} />
+          current={lettersUsed.length}
+          max={challenge.word.length + ATTEMPTS_MARGIN}
+          onRestart={handleRestartGame}
+        />
 
         <Tip tip={challenge.tip} />
         <div className={styles.word}>
